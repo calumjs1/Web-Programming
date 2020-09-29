@@ -1,7 +1,7 @@
-Game Description - 
+Game Description - Top Down Shooter with a Paintball Theme.
 
 
-Roles
+Roles-
 
 Calum, Amber, Conor - Front end (HTML, CSS, JavaScript)
 
