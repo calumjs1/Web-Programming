@@ -1,3 +1,4 @@
+  
 var pics = [
 	"Web Programming/images/orange.jpg",
 	"Web Programming/images/pink.jpg",
