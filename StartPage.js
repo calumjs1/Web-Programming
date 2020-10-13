@@ -5,6 +5,8 @@ var pics = [
 	"Web Programming/images/blue.jpg"
 ]
 
+var button1 = <button onclick="document.location='canvas.html'">Game Screen</button>
+
 var button2 = document.querySelector("#button2");
 var image = document.querySelector("img");
 var counter = 1;
