@@ -1,16 +1,10 @@
 
-
-
 var canvas = document.getElementById('canvas');
-
-canvas.width = canvas.scrollWidth;
-canvas.height = canvas.scrollHeight;
-
 
 var ctx = canvas.getContext('2d');
 
-ctx.fillRect(100, 200, 50, 250);
-
 ctx.beginPath();
-ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+ctx.fillRect(20, 40, 250, 1)
+ctx.fillRect(30, 100, 100, 10)
+ctx.fillRect(50, 80, 50, 2)
 ctx.stroke();
