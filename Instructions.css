@@ -1,6 +1,48 @@
 body {
 	background-color: #474747;
-	color: #000000;
+	color: white;
 	font-family: "Arial";
 	font-weight: 200;
+	
+}
+
+#body{
+	text-align: center;
+	padding-top: 20px;
+	font-size: 40px;
+}
+
+.Instruction1{
+	text-align: left;
+	padding-top: 40px;
+	padding-left: 20px;
+	font-size: 18px;
+}
+
+.Instruction2{
+	text-align: left;
+	padding-top: 40px;
+	padding-left: 20px;
+	font-size: 18px;
+}
+
+.Instruction3{
+	text-align: left;
+	padding-top: 40px;
+	padding-left: 20px;
+	font-size: 18px;
+}
+
+.Instruction4{
+	text-align: left;
+	padding-top: 40px;
+	padding-left: 20px;
+	font-size: 18px;
+}
+
+.Instruction5{
+	text-align: left;
+	padding-top: 40px;
+	padding-left: 20px;
+	font-size: 18px;
 }
