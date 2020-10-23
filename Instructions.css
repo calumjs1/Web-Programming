@@ -1,6 +1,6 @@
 body {
 	background-color: #474747;
-	color: white;
+	color:  #FFA500;
 	font-family: "Arial";
 	font-weight: 200;
 	
@@ -8,41 +8,71 @@ body {
 
 #body{
 	text-align: center;
-	padding-top: 20px;
+	padding-top: 60px;
 	font-size: 40px;
 }
 
 .Instruction1{
-	text-align: left;
-	padding-top: 40px;
+	text-align: center;
+	padding-top: 60px;
 	padding-left: 20px;
 	font-size: 18px;
 }
 
 .Instruction2{
-	text-align: left;
-	padding-top: 40px;
+	text-align: center;
+	padding-top: 60px;
 	padding-left: 20px;
 	font-size: 18px;
 }
 
 .Instruction3{
-	text-align: left;
-	padding-top: 40px;
+	text-align: center;
+	padding-top: 60px;
 	padding-left: 20px;
 	font-size: 18px;
 }
 
 .Instruction4{
-	text-align: left;
-	padding-top: 40px;
+	text-align: center;
+	padding-top: 60px;
 	padding-left: 20px;
 	font-size: 18px;
 }
 
 .Instruction5{
-	text-align: left;
-	padding-top: 40px;
+	text-align: center;
+	padding-top: 60px;
 	padding-left: 20px;
 	font-size: 18px;
+}
+
+#BackButton {
+	margin: 2pc auto 0;
+	padding: 15px 25px;
+	background-color: #474747;
+	color: #FFA500;
+	font-size: 12px;
+	text-align:center;
+	border: 1px solid #FFA500;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-family: "Arial";
+	letter-spacing: 4px;
+	outline: none;
+	position:relative;
+    transition: .5s ease;
+    top: 50px;
+    left: 200px;
+    right: -420px;
+    bottom: -191px;
+	
+}
+
+#BackButton:hover {
+	transition: 0.2s;
+	color: #474747 ;
+	background-color: #FFA500;
+	text-decoration: none;
+	box-shadow: 10px 10px 20px #242424;
 }
