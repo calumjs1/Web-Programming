@@ -1,8 +1,8 @@
   
 var pics = [
-	"Web Programming/images/orange.jpg",
-	"Web Programming/images/pink.jpg",
-	"Web Programming/images/blue.jpg"
+	"images/orange.jpg",
+	"images/pink.jpg",
+	"images/blue.jpg"
 ]
 
 var button1 = <button onclick="document.location='canvas.html'">Game Screen</button>
