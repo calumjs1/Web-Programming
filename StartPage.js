@@ -5,7 +5,7 @@ var pics = [
 	"images/blue.jpg"
 ]
 
-var button1 = <button onclick="document.location='canvas.html'">Game Screen</button>
+//var button1 = <button onclick="document.location='canvas.html'">Play Game</button> 
 
 var button2 = document.querySelector("#button2");
 var image = document.querySelector("img");
