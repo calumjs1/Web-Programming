@@ -1,4 +1,5 @@
 
+//canvas
 const canvas = document.querySelector('canvas');
 
 //make canvas fit window
