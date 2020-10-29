@@ -1,91 +1,40 @@
 
-        var canvas;
-        var ctx;
-        var dx = 20;
-        var dy = 20;
-        var x = 400;
-        var y = 400;
-        var WIDTH = 800;
-        var HEIGHT = 800;
-
-        function circle(x, y, r){
-            ctx.beginPath();
-            ctx.arc(x, y, r, 0, Math.PI*2, true);
-            ctx.fill();
+  document.onkeydown = detectKey;
+    function detectKey(e) {
+        var posLeft = document.getElementById('myCircle').offsetLeft;
+        var posTop = document.getElementById('myCircle').offsetTop;
+        e = e || window.event;
+        if (e.keyCode == '38') {
+            // up arrow
+            document.getElementById('myCircle').style.marginTop  = (posTop-58)+"px";
         }
-
-        function rect(x,y,w,h) {
-            ctx.beginPath();
-            ctx.rect(x,y,w,h);
-            ctx.closePath();
-            ctx.fill();
-            ctx.stroke();
+        else if (e.keyCode == '40') {
+            // down arrow
+            document.getElementById('myCircle').style.marginTop  = (posTop+58)+"px";
         }
-
-        function clear(){
-            ctx.clearRect(0, 0, WIDTH, HEIGHT);
+        else if (e.keyCode == '37') {
+           // left arrow
+            document.getElementById('myCircle').style.marginLeft  = (posLeft-58)+"px";
         }
-
-        function init() {
-            canvas = document.getElementById("canvas");
-            ctx = canvas.getContext("2d");
-            return setInterval(draw, 5);
+        else if (e.keyCode == '39') {
+           // right arrow
+            document.getElementById('myCircle').style.marginLeft  = (posLeft+58)+"px";
         }
-
-        function doKeyDown(evt){
-            switch (evt.keyCode){
-                case 38:
-                if(y - dy > 0){
-                    y -= dy;
-                }
-                break;
-                case 40:
-                if(y + dy < HEIGHT){
-                    y += dy;
-                }
-                break;
-                case 37:
-                if(x - dx > 0){
-                    x -= dx;
-                }
-                break;
-                case 39:
-                if(x + dx < WIDTH){
-                    x += dx;
-                }
-                break;
-                case 87:
-                if(y - dy > 0){
-                    y -= dy;
-                }
-                break;
-                case 83:
-                if(y + dy < HEIGHT){
-                    y += dy;
-                }
-                break;
-                case 65:
-                if(x - dx > 0){
-                    x -= dx;
-                }
-                break;
-                case 68:
-                if(x + dx < WIDTH){
-                    x += dx;
-                }
-                break;
-            }
+        if (e.keyCode == '87') {
+            // W key
+            document.getElementById('myCircle').style.marginTop  = (posTop-58)+"px";
         }
-
-        function draw(){
-            clear();
-            ctx.fillStyle = "white";
-            ctx.strokeStyle = "black";
-            rect(0,0,WIDTH,HEIGHT);
-            ctx.fillStyle = "red";
-            circle(x, y, 20);
+        else if (e.keyCode == '83') {
+            // S key
+            document.getElementById('myCircle').style.marginTop  = (posTop+58)+"px";
         }
-
-        init();
-        window.addEventListener('keydown', doKeyDown, true);
+        else if (e.keyCode == '65') {
+           // A key
+            document.getElementById('myCircle').style.marginLeft  = (posLeft-58)+"px";
+        }
+        else if (e.keyCode == '68') {
+           // D key
+            document.getElementById('myCircle').style.marginLeft  = (posLeft+58)+"px";
+        }
+    }
 
