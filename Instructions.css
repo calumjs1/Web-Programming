@@ -62,10 +62,7 @@ body {
 	outline: none;
 	position:relative;
     transition: .5s ease;
-    top: 50px;
-    left: 200px;
-    right: -420px;
-    bottom: -191px;
+	display: block;
 	
 }
 
