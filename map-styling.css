@@ -3,6 +3,9 @@
   margin: 0;
 }
 
+body {
+  background-color: #474747;
+}
 
 .container {
 
@@ -12,6 +15,9 @@
 
 }
 
+.walls {
+  border-radius: 20px;
+}
 
 
 #w1 {
@@ -39,6 +45,14 @@
   height:25px;
   width:400px;
   background-color: black
-  
 
+
+}
+
+#w4 {
+  position: absolute;
+  height:25px;
+  width: 400px;
+  background-color: black;
+  left: 450px;
 }
