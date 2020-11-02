@@ -7,7 +7,9 @@ This project makes use of HTML5, CSS3, Javascript, Document Object Model, PHP an
 Roles of each team member:
 
 Amber Roe and Calum Stewart - Front-end
+
 Jamie Evennett and Jude Gater - Back-end
+
 Conor McCabe - Asset and resource provider and front/back-end support
 
 Team meetings happen every Tuesday at 3pm local time.
