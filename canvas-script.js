@@ -39,6 +39,15 @@ class Player {
 		c.fillStyle = this.color
 		c.fill()
 	}
+
+	//this updates the x and y coordinates of the player to allow it to move
+	//across the screen
+	update() {
+		this.createPlayer();
+		this.x = x
+		this.y = y
+	}	
+	
 }
 
 //creates projectile	
@@ -71,8 +80,8 @@ class Projectile {
 }
 
 //coordinates that point to the centre of the window
-const x = canvas.width / 2
-const y = canvas.height / 2
+let x = canvas.width / 2
+let y = canvas.height / 2
 
 //instance of Player
 const player = new Player(x, y, 30, '#FFA500')
@@ -130,7 +139,61 @@ window.addEventListener('click', (event) =>
 	//create new projectile and push to the projectileArray
 	projectileArray.push(new Projectile(x, y, 5, 'black', velocity))
 })
-
 //call the animate function
 animate()
+
+
+//how many px the x/y coordinate is moved by
+let move = 20;
+
+window.addEventListener('keyup', (e) => {
+	switch(e.key){
+
+		//left arrow key
+		case 'ArrowLeft':
+			x = x - move;
+			player.update()
+			
+			break;
+		
+		//right arrow key
+		case 'ArrowRight':			
+			x = x + move;
+			player.update()
+			break;
+
+		//up arrow key
+		case 'ArrowUp':			
+			y = y - move;
+			player.update()
+			break;
+		
+		//down arrow key
+		case 'ArrowDown':
+			y = y + move;
+			player.update()
+			break;
+
+	}
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
