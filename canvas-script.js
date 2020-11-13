@@ -115,6 +115,13 @@ function animate() {
 	projectileArray.forEach(projectile =>{
 		projectile.update()
 
+
+	//collision detection - if projectile touches player
+	if (getDistance(player.x, player.y, projectile.x, projectile.y) < player.radius + projectile.radius) {
+		//take user back to start page
+		window.location.href='StartPage.html'
+	}
+
 	})
 }
 
@@ -176,6 +183,66 @@ window.addEventListener('keyup', (e) => {
 
 	}
 })
+
+//collision detection 
+
+//pythagoras theorem to calculate disatance between objects
+function getDistance(x1, y1, x2, y2) {
+	let xDistance = x2-x1;
+	let yDistance = y2-y1;
+
+	//put the x and y into theorem
+	return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2))
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
