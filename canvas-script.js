@@ -109,28 +109,5 @@ function animate() {
 	})
 }
 
-//adds event of mouse click - shoots projectile in direction of mouse
-window.addEventListener('click', (event) => 
-{
-	//calculates the angle at which the projectile moves from the centre
-	//the line from the centre to the mouse click creates hypotenuse
-	//angle is calulated based on the formation of a right angled triangle
-	const angle = Math.atan2(
-		event.clientY - y, 
-		event.clientX - x
-	)
 
-	//calculates the velocity, this creates a ratio that pushes the projectile 
-	//in the correct direction
-	const velocity = {
-		x: Math.cos(angle),
-		y: Math.sin(angle)
-	}
-
-	//create new projectile and push to the projectileArray
-	projectileArray.push(new Projectile(x, y, 5, 'black', velocity))
-})
-
-//call the animate function
-animate()
 
