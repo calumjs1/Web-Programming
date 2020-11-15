@@ -7,29 +7,7 @@ canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 
 
-// context
-var c = canvas.getContext('2d');
 
-c.beginPath();
-
-c.fillRect(20, 40, 250, 1)
-c.fillRect(30, 100, 100, 10)
-c.fillRect(50, 80, 50, 2)
-c.stroke();
-
-//creates player
-class Player {
-	constructor(x, y, radius, color) {
-		//where it appears on the screen
-		this.x = x
-		this.y = y
-
-		//size of player
-		this.radius = radius
-
-		//colour of player
-		this.color = color
-	}
 
 	createPlayer() {
 		 
