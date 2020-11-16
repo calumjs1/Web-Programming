@@ -6,7 +6,6 @@ const canvas = document.querySelector('canvas');
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 
-
 // context
 var c = canvas.getContext('2d');
 
@@ -30,6 +29,8 @@ class Player {
 		//colour of player
 		this.color = color
 	}
+
+
 
 	createPlayer() {
 		 
@@ -108,7 +109,6 @@ function animate() {
 
 	})
 }
-
 //adds event of mouse click - shoots projectile in direction of mouse
 window.addEventListener('click', (event) => 
 {
@@ -133,4 +133,5 @@ window.addEventListener('click', (event) =>
 
 //call the animate function
 animate()
+
 
