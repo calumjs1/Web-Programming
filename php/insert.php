@@ -4,35 +4,30 @@ include_once 'connect.php';
 
 
 if(isset($_POST['submit'])) {
-  $nickname = $_POST['username'];
-  $password = sha1($_POST['password']);
 
-  $qry = "SELECT username FROM user WHERE username = :u AND password_sha1  = :p";
-  $stmt = $pdo->prepare($qry);
+  $usr = $_POST['username'];
+  $pwd = $_POST['password'];
 
-  $stmt->execute(array(
-            ":u"=>$username,
-            ":p"=>$password_sha1
-          ));
-  $row = $stmt->fetch();
+  $usrcheck = "SELECT username FROM users WHERE username='$usr'";
+  $pwdcheck = "SELECT password FROM users WHERE password='$pwd'";
 
-  if($row) {
-    $_SESSION['signedIn'] = true;
-    $_SESSION['username'] = $username;
+  $qry1 = mysqli_query($conn, $usrcheck);
+  $qry2 = mysqli_query($conn, $pwdcheck);
+
+
+  $row1 = mysqli_fetch_array($qry1);
+  $row2 = mysqli_fetch_array($qry2);
+
+  if($row1 > 0 and $row2 > 0) {
     header("Location: canvas.html");
-
-  } else {
-   $_SESSION['flash_error'] = "Invalid username or password";
-   $_SESSION['signed_in'] = false;
-   $_SESSION['username'] = null;
-   header("Location: /index.php");
-
   }
 
-
-
-
 }
+
+
+
+
+
 
 
 ?>
