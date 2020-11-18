@@ -82,8 +82,11 @@ class Projectile {
 }
 
 //coordinates that point to the centre of the window
-let x = canvas.width / 2
-let y = canvas.height / 2
+// let x = Math.random() *canvas.width + 1;
+// let y = Math.random() *canvas.height + 1;
+
+	let x = canvas.width/2
+	let y = canvas.height/2
 
 //instance of Player
 const player = new Player(x, y, 30, '#FFA500')
@@ -103,11 +106,17 @@ const projectile = new Projectile(
 	}
 )
 
+
+
+
+
+	
 //management for multiple instances of projectile
 const projectileArray = []
 
 //creates smooth movement over the canvas from projectiles
 function animate() {
+
 	requestAnimationFrame(animate)
 	c.clearRect(0, 0, canvas.width, canvas.height)
 
@@ -117,23 +126,23 @@ function animate() {
 	//creates projectiles
 	projectileArray.forEach(projectile =>{
 		projectile.update()
+	})
+	
 
-
-
-	//collision detection - if projectile touches player
-	if (getDistance(player.x, player.y, projectile.x, projectile.y) < player.radius + projectile.radius) {
-		//take user back to start page
-		window.location.href='StartPage.html'
+	//if not touching the player
+	if ((projectile.x > player.x + player.radius) || (projectile.x < player. x - player.radius) || (projectile.y < player.y - player.radius) || (projectile.y > player.y + player.radius)) {
+		//collision detection - if projectile touches player
+		if ((getDistance(player.x, player.y, projectile.x, projectile.y)) < (player.radius + projectile.radius)) {
+			//take user back to start page
+			window.location.href='StartPage.html'
+		
+		}
 	}
+	
+	
 
-	})
-
-	})
-
-	//collision detection - if projectile touches player
-	  if (getDistance(player.x, player.y, projectile.x, projectile.y) < player.radius + projectile.radius) {
-	 	window.location.href='StartPage.html'
-		}	
+	
+}
 
 //adds event of mouse click - shoots projectile in direction of mouse
 window.addEventListener('click', (event) => 
@@ -156,13 +165,7 @@ window.addEventListener('click', (event) =>
 
 	//create new projectile and push to the projectileArray
 	projectileArray.push(new Projectile(x, y, 5, 'black', velocity))
-})
 
-
-	//create new projectile and push to the projectileArray
-	projectileArray.push(new Projectile(x, y, 5, 'black', velocity))
-
-	activate()
 })
 
 
@@ -176,6 +179,7 @@ animate()
 let move = 20;
 
 window.addEventListener('keyup', (e) => {
+
 	switch(e.key){
 
 		//left arrow key
