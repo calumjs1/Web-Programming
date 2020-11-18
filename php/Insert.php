@@ -8,11 +8,26 @@ if(isset($_POST['submit'])) {
   $usr = $_POST['username'];
   $pwd = $_POST['password'];
 
-  $usrcheck = "SELECT username FROM users WHERE username='$usr'";
-  $pwdcheck = "SELECT password FROM users WHERE password='$pwd'";
+  $qry = "SELECT username, password FROM users WHERE username = '$usr'";
 
-  $qry1 = mysqli_query($conn, $usrcheck);
-  $qry2 = mysqli_query($conn, $pwdcheck);
+
+  if($result = mysqli_fetch_array($link, $qry)) {
+    $row = mysqli_fetch_assoc($result);
+    $username = $row['username'];
+    $passcheck = $row['password'];
+
+    $hashedPassCheck = password_verify($pwd, $passcheck);
+
+    if($hashesPassCheck == false) {
+      echo 'Incorrect Password';
+    } else {
+      echo ' Login Successful';
+      header("Location: ../canvas.html");
+    }
+  }
+
+
+
 
 
   $row1 = mysqli_fetch_array($qry1);
