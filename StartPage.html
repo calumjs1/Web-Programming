@@ -18,16 +18,21 @@
 			<span> Click to Shoot</span>
 			<span> </span>
 		</div>
-	
-		<input type="text" placeholder="NICKNAME">
-		
-		<button id="button1" onclick="window.location.href='canvas.html';">Play Game</button>
+		<form action="php/serverside.php" method="post">
+			<p><a id="new-user-link" href="newuser.html">New user? Click here.</a></p>
+		<input name="username" type="text" placeholder="NICKNAME">
+		<input name="password" type="text" placeholder="PASSWORD">
 
+		<button name="submit" id="button1" onclick="window.location.href='canvas.html';">Play Game</button>
+	</form>
 		<img src="images/orange.jpg">
 
 		<button id="button2">Change Colour</button>
 
 		<button id="button3" onclick="window.location.href='Instructions.html';">Instructions</button>
+		
+		<button id="button4" onclick="window.location.href='Settings.html';">Settings</button>
+
 
 	</section>
 	<script type="text/javascript" src="StartPage.js"></script>

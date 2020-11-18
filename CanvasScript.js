@@ -77,6 +77,7 @@ class Projectile {
 		this.x = this.x +this.velocity.x
 		this.y = this.y +this.velocity.y
 	}
+
 		
 }
 
@@ -98,6 +99,7 @@ const projectile = new Projectile(
 	{
 	 	x: 1,
 		y: 1
+
 	}
 )
 
@@ -117,6 +119,7 @@ function animate() {
 		projectile.update()
 
 
+
 	//collision detection - if projectile touches player
 	if (getDistance(player.x, player.y, projectile.x, projectile.y) < player.radius + projectile.radius) {
 		//take user back to start page
@@ -124,7 +127,14 @@ function animate() {
 	}
 
 	})
-}
+
+	})
+
+	//collision detection - if projectile touches player
+	  if (getDistance(player.x, player.y, projectile.x, projectile.y) < player.radius + projectile.radius) {
+	 	window.location.href='StartPage.html'
+		}	
+
 //adds event of mouse click - shoots projectile in direction of mouse
 window.addEventListener('click', (event) => 
 {
@@ -143,11 +153,23 @@ window.addEventListener('click', (event) =>
 		y: Math.sin(angle)
 	}
 
+
 	//create new projectile and push to the projectileArray
 	projectileArray.push(new Projectile(x, y, 5, 'black', velocity))
 })
+
+
+	//create new projectile and push to the projectileArray
+	projectileArray.push(new Projectile(x, y, 5, 'black', velocity))
+
+	activate()
+})
+
+
 //call the animate function
 animate()
+
+
 
 
 //how many px the x/y coordinate is moved by
@@ -194,3 +216,4 @@ function getDistance(x1, y1, x2, y2) {
 	//put the x and y into theorem
 	return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2))
 }
+

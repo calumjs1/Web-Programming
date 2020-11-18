@@ -1,6 +1,6 @@
 Project Team Members: Jamie Evennett, Jude Gater, Conor McCabe, Amber Roe and Calum Stewart
 
-The project will be a simple, dynamic 2D top-down shooter game where the player is a circle that can shoot projectiles at other players causing their HP to go down and it will calculate and display high scores on the leaderboard.
+The project will be a simple, dynamic 2D top-down shooter game where the player is a circle that can shoot projectiles at other players causing their health points (HP) to go down and it will calculate and display high scores on the leaderboard.
 
 This project makes use of HTML5, CSS3, Javascript, Document Object Model, PHP and SQL applications.
 
