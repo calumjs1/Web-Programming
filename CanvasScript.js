@@ -176,39 +176,7 @@ animate()
 
 
 //how many px the x/y coordinate is moved by
-let move = 20;
 
-window.addEventListener('keyup', (e) => {
-
-	switch(e.key){
-
-		//left arrow key
-		case 'ArrowLeft':
-			x = x - move;
-			player.update()
-			
-			break;
-		
-		//right arrow key
-		case 'ArrowRight':			
-			x = x + move;
-			player.update()
-			break;
-
-		//up arrow key
-		case 'ArrowUp':			
-			y = y - move;
-			player.update()
-			break;
-		
-		//down arrow key
-		case 'ArrowDown':
-			y = y + move;
-			player.update()
-			break;
-
-	}
-})
 
 //collision detection 
 
