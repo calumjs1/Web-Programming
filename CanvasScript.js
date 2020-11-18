@@ -6,7 +6,6 @@ const canvas = document.querySelector('canvas');
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 
-
 // context
 var c = canvas.getContext('2d');
 
@@ -30,6 +29,8 @@ class Player {
 		//colour of player
 		this.color = color
 	}
+
+
 
 	createPlayer() {
 		 
@@ -76,9 +77,6 @@ class Projectile {
 		this.x = this.x +this.velocity.x
 		this.y = this.y +this.velocity.y
 	}
-
-
-	
 		
 }
 
@@ -100,7 +98,7 @@ const projectile = new Projectile(
 	{
 	 	x: 1,
 		y: 1
-	}	
+	}
 )
 
 //management for multiple instances of projectile
@@ -117,14 +115,16 @@ function animate() {
 	//creates projectiles
 	projectileArray.forEach(projectile =>{
 		projectile.update()
-	})
+
 
 	//collision detection - if projectile touches player
-	  if (getDistance(player.x, player.y, projectile.x, projectile.y) < player.radius + projectile.radius) {
-	 	window.location.href='StartPage.html'
-		}	
-}
+	if (getDistance(player.x, player.y, projectile.x, projectile.y) < player.radius + projectile.radius) {
+		//take user back to start page
+		window.location.href='StartPage.html'
+	}
 
+	})
+}
 //adds event of mouse click - shoots projectile in direction of mouse
 window.addEventListener('click', (event) => 
 {
@@ -143,17 +143,11 @@ window.addEventListener('click', (event) =>
 		y: Math.sin(angle)
 	}
 
-
 	//create new projectile and push to the projectileArray
 	projectileArray.push(new Projectile(x, y, 5, 'black', velocity))
-
-	activate()
 })
-
-
 //call the animate function
 animate()
-
 
 
 //how many px the x/y coordinate is moved by
