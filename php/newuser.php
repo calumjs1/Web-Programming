@@ -8,7 +8,7 @@ if(isset($_POST['submit'])) {
   //hash system will be implemented
   $salt = "@$&%£WRHSFAA%B&@%(^*$%&$^£*&£ad";
 
-  $pwdHash = md5($salt . $pwd);
+  $pwdHash = hash("sha256", $pwd);
 
   $usrCheck = "SELECT username FROM user WHERE userName='".$user."'";
   $qry = mysqli_query($conn, $usrCheck);
