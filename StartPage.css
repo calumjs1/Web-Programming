@@ -114,7 +114,12 @@ input {
 	width: 250px;
 }
 
+.stuff{
+	margin-top: 30px;
+}
 #button1 {
+	display: flex; 
+	justify-content: center;
 	margin: 2pc auto 0;
 	padding: 30px 40px;
 	background-color: #474747;
