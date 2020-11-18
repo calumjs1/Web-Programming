@@ -1,5 +1,5 @@
 <?php
-include_once 'connect.php';
+include_once 'Connect.php';
 
 
 
@@ -19,7 +19,7 @@ if(isset($_POST['submit'])) {
   $row2 = mysqli_fetch_array($qry2);
 
   if($row1 > 0 and $row2 > 0) {
-    header("Location: canvas.html");
+    header("Location: Canvas.html");
   }
 
 }

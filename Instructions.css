@@ -48,6 +48,7 @@ body {
 }
 
 #BackButton {
+	margin-top: 500px;
 	margin: 2pc auto 0;
 	padding: 15px 25px;
 	background-color: #474747;
