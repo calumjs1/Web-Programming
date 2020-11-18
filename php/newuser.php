@@ -6,7 +6,7 @@ if(isset($_POST['submit'])) {
   $user = $_POST['username'];
   $pwd = $_POST['password'];
   //hash system will be implemented
-  $salt = "@$&%£WRHSFAA%B&@%(^*$%&$^£*&£ad"
+  $salt = "@$&%£WRHSFAA%B&@%(^*$%&$^£*&£ad";
 
   $pwdHash = md5($salt . $pwd);
 
