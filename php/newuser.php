@@ -10,14 +10,20 @@ if(isset($_POST['submit'])) {
 
   $pwdHash = md5($salt . $pwd);
 
-  $usrCheck = "SELECT ' username'FROM 'user' WHERE userName='$user'";
+  $usrCheck = "SELECT username FROM user WHERE userName='".$user."'";
   $qry = mysqli_query($conn, $usrCheck);
+  $rows = mysqli_num_rows($qry);
 
-  if(mysqli_num_rows($qry > 0)) {
+  if($rows != 0) {
     echo '<p>Sorry, that username is already taken.</p>'; //checks if a username already exists on the database
+    header("Location: ../newuser.html");
   } else {
-    $qry = "INSERT INTO 'user' (username, password) VALUES ('$user', '$pwdHash')";
-    mysqli_query($conn, $qry);
+    $qry = "INSERT INTO user (username, password) VALUES ('".$user."', '".$pwdHash."')";
+    $result = mysqli_query($conn, $qry);
+    if($result) {
+      header("Location: ../canvas.html");
+    }
+
 
   }
 
