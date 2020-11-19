@@ -1,29 +1,30 @@
 <?php
-require('Connect.php');
+require("Connect.php");
+
 
 
 if(isset($_POST['submit'])) {
-  $user = $_POST['username'];
-  $pwd = $_POST['password'];
-  //hash system will be implemented
-  $salt = "@$&%£WRHSFAA%B&@%(^*$%&$^£*&£ad";
+  $user = $_POST['newUsername'];
+  $pwd = $_POST['newPassword'];
 
-  $pwdHash = hash("sha256", $pwd);
 
-  $usrCheck = "SELECT username FROM user WHERE userName='".$user."'";
-  $qry = mysqli_query($conn, $usrCheck);
-  $rows = mysqli_num_rows($qry);
 
-  if($rows != 0) {
-    echo '<p>Sorry, that username is already taken.</p>'; //checks if a username already exists on the database
-    header("Location: ../newuser.html");
+  $pwdHash = password_hash($pwd, PASSWORD_DEFAULT);
+
+  $usrCheck = "SELECT username FROM user WHERE username = '".$user."';";
+  $qry = mysqli_query($link, $usrCheck);
+  $row = mysqli_num_rows($qry);
+;
+  if($row != 0) {
+    echo '<script> alert("Sorry. that username is already taken")</script>';
   } else {
     $qry = "INSERT INTO user (username, password) VALUES ('".$user."', '".$pwdHash."')";
-    $result = mysqli_query($conn, $qry);
-    if($result) {
+    $res = mysqli_query($link, $qry);
+    if($res) {
       header("Location: ../canvas.html");
+    } else {
+      echo 'Error: did not register details.';
     }
-
 
   }
 
@@ -33,11 +34,4 @@ if(isset($_POST['submit'])) {
 }
 
 
-
-
-
-
-
-
-
- ?>
+?>
