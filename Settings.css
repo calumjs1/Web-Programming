@@ -55,3 +55,30 @@ body {
 	box-shadow: 10px 10px 20px #242424;
 }
 
+#QuitButton {
+	margin-top: 500px;
+	margin: 2pc auto 0;
+	padding: 15px 25px;
+	background-color: #474747;
+	color: #FFA500;
+	font-size: 12px;
+	text-align:center;
+	border: 1px solid #FFA500;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-family: "Arial";
+	letter-spacing: 4px;
+	outline: none;
+	position:relative;
+    transition: .5s ease;
+	display: block;
+	
+}
+
+#QuitButton:hover {
+	transition: 0.2s;
+	color: #474747 ;
+	background-color: #FFA500;
+	text-decoration: none;
+	box-shadow: 10px 10px 20px #242424;
+
