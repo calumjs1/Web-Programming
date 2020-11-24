@@ -82,8 +82,8 @@ class Projectile {
 }
 
 //coordinates that point to the centre of the window
-// let x = Math.random() *canvas.width + 1;
-// let y = Math.random() *canvas.height + 1;
+ //let x = Math.random() *canvas.width + 1;
+ //let y = Math.random() *canvas.height + 1;
 
 	let x = canvas.width/2
 	let y = canvas.height/2
@@ -130,14 +130,14 @@ function animate() {
 	
 
 	//if not touching the player
-	if ((projectile.x > player.x + player.radius) || (projectile.x < player. x - player.radius) || (projectile.y < player.y - player.radius) || (projectile.y > player.y + player.radius)) {
+	//if ((projectile.x > player.x + player.radius) || (projectile.x < player. x - player.radius) || (projectile.y < player.y - player.radius) || (projectile.y > player.y + player.radius)) {
 		//collision detection - if projectile touches player
-		if ((getDistance(player.x, player.y, projectile.x, projectile.y)) < (player.radius + projectile.radius)) {
+		//if ((getDistance(player.x, player.y, projectile.x, projectile.y)) < (player.radius + projectile.radius)) {
 			//take user back to start page
-			window.location.href='StartPage.html'
+			//window.location.href='StartPage.html'
 		
-		}
-	}
+		//}
+	//}
 	
 	
 
