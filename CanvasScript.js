@@ -203,6 +203,33 @@ window.addEventListener('keyup', (e) => {
 			y = y + move;
 			player.update()
 			break;
+			
+			
+		//A key
+		case 'AKey':
+			x = x - move;
+			player.update()
+			break;
+		
+		//D key
+		case 'DKey':
+			x = x + move;
+			player.update()
+			break;
+		
+
+		//W key
+		case 'WKey':			
+			y = y - move;
+			player.update()
+			break;
+		
+		//S key
+		case 'SKey':			
+			y = y + move;
+			player.update()
+			break;
+		
 
 	}
 })
