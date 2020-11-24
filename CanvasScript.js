@@ -107,9 +107,6 @@ const projectile = new Projectile(
 )
 
 
-
-
-
 	
 //management for multiple instances of projectile
 const projectileArray = []
@@ -128,19 +125,19 @@ function animate() {
 		projectile.update()
 	})
 
-
-	//timeout to let the projectile get out of the player
-	setTimeout(getDistance, 500);
-
-		//collision detection - if projectile touches player
-		if ((getDistance(player.x, player.y, projectile.x, projectile.y)) < (player.radius + projectile.radius)) {
-			//take user back to start page
-			window.location.href='StartPage.html'
-		}
-	//}
+	var timeoutID = scope.setTimeout(collisionDetect, 1000);
 	
+}
 	
-
+function collisionDetect() {
+	///setTimeout(getDistance(), 500);
+	if ((getDistance(player.x, player.y, projectile.x, projectile.y)) < (player.radius + projectile.radius)){
+		player.color = "red";
+		player.update();
+	} else {
+		timeoutID.clearTimeout();
+	}
+		
 	
 }
 
