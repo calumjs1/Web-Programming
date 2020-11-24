@@ -127,16 +127,16 @@ function animate() {
 	projectileArray.forEach(projectile =>{
 		projectile.update()
 	})
-	
 
-	//if not touching the player
-	//if ((projectile.x > player.x + player.radius) || (projectile.x < player. x - player.radius) || (projectile.y < player.y - player.radius) || (projectile.y > player.y + player.radius)) {
+
+	//timeout to let the projectile get out of the player
+	setTimeout(getDistance, 500);
+
 		//collision detection - if projectile touches player
-		//if ((getDistance(player.x, player.y, projectile.x, projectile.y)) < (player.radius + projectile.radius)) {
+		if ((getDistance(player.x, player.y, projectile.x, projectile.y)) < (player.radius + projectile.radius)) {
 			//take user back to start page
-			//window.location.href='StartPage.html'
-		
-		//}
+			window.location.href='StartPage.html'
+		}
 	//}
 	
 	
