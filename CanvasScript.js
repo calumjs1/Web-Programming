@@ -170,7 +170,7 @@ class Projectile {
 		//draw full circle for projectile and fill with specified colour
 		// c.beginPath()
 		// c.arc(this.x, this.y, this.radius, 0, Math.PI*2, false)	
-		c.fillStyle = "white";
+		c.fillStyle = "red";
 		c.fillRect(this.x, this.y, this.width, this.height);
 	}
 
