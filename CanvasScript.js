@@ -34,7 +34,7 @@ function SetupCanvas(){
 
 	document.body.addEventListener("keyup", function(e){
 		keys[e.keyCode] = false;
-		if (e.keycode === 32){
+		if (e.keyCode === 32){
 			projectiles.push(new Projectile(player.angle));
 		}
 	});
