@@ -124,11 +124,12 @@ class Player {
 		// c.fillRect(this.x, this.y, this.width, this.height);
 
 		//convert angles into radians 
-		let radians = this.angle / Math.PI * 180
+		
 		 
 		//draw full circle for player and fill with specified colour
 		c.beginPath()
 		let vertAngle = ((Math.PI * 2) / 3);
+		let radians = this.angle / Math.PI * 180;
 		for (let i = 0; i < 3; i++){
 			c.lineTo(this.x - this.radius * Math.cos(vertAngle * i + radians),
 			this.y - this.radius * Math.sin(vertAngle * i + radians));
