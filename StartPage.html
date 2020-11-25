@@ -2,7 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!-- gives the title a name -->
 	<title>Paintball Combat</title>
+	<!-- link to the style sheet for this web page -->
 	<link rel="stylesheet" type="text/css" href="StartPage.css">
 </head>
 <body>
@@ -18,27 +20,30 @@
 			<span> Click to Shoot</span>
 			<span> </span>
 		</div>
+		<!-- new user account -->
 		<form action="php/insert.php" method="post">
 			<p><a id="new-user-link" href="newuser.html">New user? Click here.</a></p>
 
 		<div class="login">
+		<!-- entering the username and password -->
 		<input name="username" type="text" placeholder="NICKNAME">
 		<input name="password" type="password" placeholder="PASSWORD">
 		</div>
+		<!-- button that links to the actual game -->
 		<button name="submit" id="button1" onclick="window.location.href='Canvas.html';">Play Game</button>
 	</form>
 		<img src="images/orange.jpg">
 
 		<button id="button2">Change Colour</button>
-
+		<!-- button that links to the instructions page -->
 		<button id="button3" onclick="window.location.href='Instructions.html';">Instructions</button>
-
+		<!-- button that links to the setting page -->
 		<button id="button4" onclick="window.location.href='Settings.html';">Settings</button>
 		
 		<button id="QuitButton" onclick="self.close()">Close</button>
 
-
 	</section>
+	<!-- link to the JavaScript for this page -->
 	<script type="text/javascript" src="StartPage.js"></script>
 </body>
 </html>
