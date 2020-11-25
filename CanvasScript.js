@@ -2,8 +2,8 @@
 //let canvas;
 //let c;
 //make canvas fit window
-canvasWidth = window.innerWidth
-canvasHeight = window.innerHeight
+canvasWidth = window.innerWidth;
+canvasHeight = window.innerHeight;
 let player;
 let keys = [];
 let projectiles = [];
