@@ -81,7 +81,7 @@ class Player {
 	Update(){
 
 		//convert angle into radians
-		let radians = this.angle / Math.PI * 180
+		let radians = this.angle / Math.PI * 180;
 
 		//cacluate the changing values of x and y when moving forward
 		if (this.moveForward){
@@ -96,7 +96,7 @@ class Player {
 		}
 
 		if (this.x > canvas.width){ //right side
-			this.x = this.radius
+			this.x = this.radius;
 		}
 
 		if (this.y < this.radius){ //top
