@@ -65,8 +65,8 @@ class Player {
 		//colour of player
 		this.fillStyle = "#FFA500";
 
-		this.projectilePointX = this.canvasWidth / 2 + 30;
-		this.projectilePointY = this.canvasHeight / 2;
+		this.projectilePointX = canvasWidth / 2 + 30;
+		this.projectilePointY = canvasHeight / 2;
 
 		// this.height = 30;
 		// this.width = 20;
@@ -130,6 +130,8 @@ class Player {
 		c.beginPath();
 		let vertAngle = ((Math.PI * 2) / 3);
 		let radians = this.angle / Math.PI * 180;
+		this.projectilePointX = this.x - this.radius * Math.cos(radians);
+		this.projectilePointY = this.y - this.radius * Math.sin(radians);
 		for (let i = 0; i < 3; i++){
 			c.lineTo(this.x - this.radius * Math.cos(vertAngle * i + radians),
 			this.y - this.radius * Math.sin(vertAngle * i + radians));
@@ -137,9 +139,6 @@ class Player {
 		c.closePath();
 		c.fillStyle = "#FFA500";
 		c.fill();
-
-		this.projectilePointX = this.x - this.radius * Math.cos(radians);
-		this.projectilePointY = this.y - this.radius * Math.sin(radians);
 	}	
 	
 }
