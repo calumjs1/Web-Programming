@@ -169,7 +169,7 @@ class Projectile {
 		//draw full circle for projectile and fill with specified colour
 		// c.beginPath()
 		// c.arc(this.x, this.y, this.radius, 0, Math.PI*2, false)	
-		c.fillStyle = "red";
+		c.fillStyle = "white";
 		c.fillRect(this.x, this.y, this.width, this.height);
 	}
 
@@ -177,6 +177,29 @@ class Projectile {
 	
 
 		
+}
+
+function CollisionDetection(x1, y1, x2, y2, r1, r2){
+	let radiusSum;
+	let xDifference;
+	let yDifference;
+	radiusSum = r1 + r2;
+	xDifference = x1 - x2;
+	yDifference = y1 - y2;
+	if (radiusSum > Math.sqrt((xDifference * yDifference) + (yDifference * yDifference))){
+		return true;
+	} else {
+		return false;
+	}	
+}
+
+//pythagoras theorem to calculate disatance between objects
+function getDistance(x1, y1, x2, y2) {
+	let xDistance = x2-x1;
+	let yDistance = y2-y1;
+
+	//put the x and y into theorem
+	return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2))
 }
 
 function Render(){
@@ -189,6 +212,14 @@ function Render(){
 	if (keys[39]){
 		player.Rotate(1);
 	}
+
+	for (let i = 0; i < projectiles.length; i++){
+		if (getDistance(player.x, player.y, projectiles[i].x, projectiles[i].y) < (25)){
+			window.location.href = 'StartPage.html';
+		}
+	}
+
+
 
 	c.clearRect(0,0, canvasWidth, canvasHeight);
 	player.Update();
@@ -205,176 +236,5 @@ function Render(){
 
 }
 
-// //coordinates that point to the centre of the window
-//  //let x = Math.random() *canvas.width + 1;
-//  //let y = Math.random() *canvas.height + 1;
 
-// 	let x = canvas.width/2
-// 	let y = canvas.height/2
-
-// //instance of Player
-// const player = new Player(x, y, 30, '#FFA500')
-	
-
-// //instace of projectile
-// //(x coord, y coord, size, colour, velocity)
-// const projectile = new Projectile(
-// 	x, 	
-// 	y, 
-// 	5, 
-// 	'black',
-// 	{
-// 	 	x: 1,
-// 		y: 1
-
-// 	}
-// )
-
-
-	
-// //management for multiple instances of projectile
-// const projectileArray = []
-
-// //creates smooth movement over the canvas from projectiles
-// function animate() {
-
-// 	requestAnimationFrame(animate)
-// 	c.clearRect(0, 0, canvas.width, canvas.height)
-
-// 	//creates player
-// 	player.createPlayer()
-
-// 	//creates projectiles
-// 	projectileArray.forEach(projectile =>{
-// 		projectile.update()
-// 	})
-
-
-	
-// var timeoutID = setTimeout(collisionDetect, 2000);
-
-
-// 	if (((getDistance(player.x, player.y, projectile.x, projectile.y)) < (player.radius + projectile.radius)) 
-// 		collisionDetect();	
-// 	}
-	
-// }
-	
-// function collisionDetect() {
-// 	player.color = "blue";
-
-	  
-// 		// 
-// 		// player.update();
-// 	 // }
-// 	// } else {
-// 	// 	timeoutID.clearTimeout();
-// 	// }
-		
-	
-// }
-
-// //adds event of mouse click - shoots projectile in direction of mouse
-// window.addEventListener('click', (event) => 
-// {
-// 	//calculates the angle at which the projectile moves from the centre
-// 	//the line from the centre to the mouse click creates hypotenuse
-// 	//angle is calulated based on the formation of a right angled triangle
-// 	const angle = Math.atan2(
-// 		event.clientY - y, 
-// 		event.clientX - x
-// 	)
-
-// 	//calculates the velocity, this creates a ratio that pushes the projectile 
-// 	//in the correct direction
-// 	const velocity = {
-// 		x: Math.cos(angle),
-// 		y: Math.sin(angle)
-// 	}
-
-
-// 	//create new projectile and push to the projectileArray
-// 	projectileArray.push(new Projectile(x, y, 5, 'black', velocity))
-
-// })
-
-
-// //call the animate function
-// animate()
-
-
-
-
-// //how many px the x/y coordinate is moved by
-// let move = 20;
-
-// window.addEventListener('keyup', (e) => {
-
-// 	switch(e.key){
-
-// 		//left arrow key
-// 		case 'ArrowLeft':
-// 			x = x - move;
-// 			player.update()
-			
-// 			break;
-		
-// 		//right arrow key
-// 		case 'ArrowRight':			
-// 			x = x + move;
-// 			player.update()
-// 			break;
-
-// 		//up arrow key
-// 		case 'ArrowUp':			
-// 			y = y - move;
-// 			player.update()
-// 			break;
-		
-// 		//down arrow key
-// 		case 'ArrowDown':
-// 			y = y + move;
-// 			player.update()
-// 			break;
-			
-			
-// 		//A key
-// 		case 'AKey':
-// 			x = x - move;
-// 			player.update()
-// 			break;
-		
-// 		//D key
-// 		case 'DKey':
-// 			x = x + move;
-// 			player.update()
-// 			break;
-		
-
-// 		//W key
-// 		case 'WKey':			
-// 			y = y - move;
-// 			player.update()
-// 			break;
-		
-// 		//S key
-// 		case 'SKey':			
-// 			y = y + move;
-// 			player.update()
-// 			break;
-		
-
-// 	}
-// })
-
-// //collision detection 
-
-// //pythagoras theorem to calculate disatance between objects
-// function getDistance(x1, y1, x2, y2) {
-// 	let xDistance = x2-x1;
-// 	let yDistance = y2-y1;
-
-// 	//put the x and y into theorem
-// 	return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2))
-// }
 
