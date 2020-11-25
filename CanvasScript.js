@@ -65,8 +65,8 @@ class Player {
 		//colour of player
 		this.fillStyle = "#FFA500";
 
-		this.projectilePointX = this.canvasWidth / 2 + 30;
-		this.projectilePointY = this.canvasHeight / 2;
+		this.projectilePointX = this.canvasWidth / 2 + 15;
+		this.projectilePointY = this.canvasHeight / 2 + 15;
 
 		// this.height = 30;
 		// this.width = 20;
@@ -159,6 +159,12 @@ class Projectile {
 		this.velocityX = 0;
 		this.velocityY = 0;
 	}
+	//update the properties of projectile
+	Update() {
+		var radians = this.angle / Math.PI * 180;
+		this.x -= Math.cos(radians) * this.speed;
+		this.y -= Math.sin(radians) * this.speed;
+	}
 
 	createProjectile() {
 		//draw full circle for projectile and fill with specified colour
@@ -168,12 +174,8 @@ class Projectile {
 		c.fillRect(this.x, this.y, this.width, this.height);
 	}
 
-	//update the properties of projectile
-	Update() {
-		var radians = this.angle / Math.PI * 180;
-		this.x -= Math.cos(radians) * this.speed;
-		this.y -= Math.sin(radians) * this.speed;
-	}
+	
+	
 
 		
 }
