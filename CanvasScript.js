@@ -127,7 +127,7 @@ class Player {
 		
 		 
 		//draw full circle for player and fill with specified colour
-		c.beginPath()
+		c.beginPath();
 		let vertAngle = ((Math.PI * 2) / 3);
 		let radians = this.angle / Math.PI * 180;
 		for (let i = 0; i < 3; i++){
@@ -135,8 +135,8 @@ class Player {
 			this.y - this.radius * Math.sin(vertAngle * i + radians));
 		}
 		c.closePath();
-		c.fillStyle = "#FFA500"
-		c.fill()
+		c.fillStyle = "#FFA500";
+		c.fill();
 
 		this.projectilePointX = this.x - this.radius * Math.cos(radians);
 		this.projectilePointY = this.y - this.radius * Math.sin(radians);
