@@ -1,56 +1,86 @@
+//JavaScript code for PaintBall Combat
 
-//let canvas;
-//let c;
 //make canvas fit window
 canvasWidth = window.innerWidth;
 canvasHeight = window.innerHeight;
+
+//player
 let player;
+
+//arrays to hold projectiles and keycodes
+//by having an array to hold the keycodes it allows keys to function simultaneously
 let keys = [];
 let projectiles = [];
 
 
-
+//when the page loads, setUp the canvas
 document.addEventListener('DOMContentLoaded', SetupCanvas);
 
+
 function SetupCanvas(){
+	/**
+		Parameters:
+		N/A
+
+		Returns;
+		N/A
+
+		Description 
+		initialises all required information needed on the canvas
+	**/
+
 	//get a reference to the canvas
 	canvas = document.querySelector('canvas');
+	
 	//get the context
     c = canvas.getContext('2d');
+	
 	//size of canvas
 	canvas.width = canvasWidth;
 	canvas.height = canvasHeight;
-
-	//c.fillRect(0, 0, canvas.width, canvas.height);
 	
 	//instantiate player
 	player = new Player();
 
-	//if a key goes down - put it into an array
+	//if a key goes down - put it into the array
 	document.body.addEventListener("keydown", function(e){
 		//put this keycode in the array
 		keys[e.keyCode] = true;
 	});
 
+
 	document.body.addEventListener("keyup", function(e){
 		keys[e.keyCode] = false;
+
+		//if the spacebar is pressed create a new projectile
 		if (e.keyCode === 32){
 			projectiles.push(new Projectile(player.angle));
 		}
 	});
+
 	//updates and draws all attributes on the screen
 	Render();
 }
 
 //creates player
 class Player {
+
 	constructor() {
-		this.visible = true;
-		//where it appears on the screen
+		/**
+			Parameters:
+			N/A
+
+			Returns:
+			N/A
+
+			Description
+			initialises all required attributes for player
+		**/
+		//where the player appears on the screen
 		this.x = canvasWidth / 2;
 		this.y = canvasHeight /2;
 
-		//Controlling the Player
+		//Controlling and moving the player
 		this.moveForward = false;
 		this.speed = 0.09;
 		this.velocityX = 0;
@@ -60,16 +90,16 @@ class Player {
 
 		//size of player
 		this.radius = 30;
+
+		//position of radius
 		this.angle = 0;
 		
 		//colour of player
 		this.fillStyle = "#FFA500";
 
+		//where the projectile is fired
 		this.projectilePointX = canvasWidth / 2 + 30;
 		this.projectilePointY = canvasHeight / 2;
-
-		// this.height = 30;
-		// this.width = 20;
 
 	}
 
@@ -79,7 +109,18 @@ class Player {
 	}
 
 	Update(){
+		/**
+			Parameters:
+			N/A
 
+			Returns:
+			N/A
+
+			Description 
+			- Updates the x and y values of player
+			- keeps the player within the boundaries / player does not get lost outside boundaries
+			- slows down the player when keys are released
+		**/
 		//convert angle into radians
 		let radians = this.angle / Math.PI * 180;
 
@@ -111,23 +152,28 @@ class Player {
 		this.velocityX *= 0.99;
 		this.velocityY *=0.99;
 
-		//change value of x anf y whilst accounting for air friction
+		//change value of x and y whilst accounting for air friction
 		this.x -= this.velocityX;
 		this.y -= this.velocityY;
 	}
 
 
-	//draw the player on the screen
 	createPlayer() {
+		/**
+			Parameters:
+			N/A
 
-		// c.fillStyle = this.color;
-		// c.fillRect(this.x, this.y, this.width, this.height);
+			Returns:
+			N/A
 
-		//convert angles into radians 
-		
+			Description
+			Draws the player on the screen
+		**/
 		 
-		//draw full circle for player and fill with specified colour
+		//draw a triangle for player and fill with specified colour
 		c.beginPath();
+
+		//create triangle
 		let vertAngle = ((Math.PI * 2) / 3);
 		let radians = this.angle / Math.PI * 180;
 		this.projectilePointX = this.x - this.radius * Math.cos(radians);
@@ -137,6 +183,8 @@ class Player {
 			this.y - this.radius * Math.sin(vertAngle * i + radians));
 		}
 		c.closePath();
+		
+		//fill triangle with orange colour
 		c.fillStyle = "#FFA500";
 		c.fill();
 	}	
@@ -147,54 +195,85 @@ class Player {
 class Projectile {
 
 	constructor(angle) {
-		this.visible = true;
+		/**
+			Parameters:
+			angle - the angle of the player when the projectile is created
+
+			Returns:
+			N/A
+
+			Description:
+			initialises all the attriutes of the projectile
+		**/
+		//where the projectile is fired
 		this.x = player.projectilePointX;
 		this.y = player.projectilePointY;
-		//this.radius = 5;
+		
+		//angle at which it is fired
 		this.angle = angle;
+		
+		//shape of projectile
 		this.height = 4;
 		this.width = 4;
+		
+		//controls movement of projectile
 		this.speed = 5;
 		this.velocityX = 0;
 		this.velocityY = 0;
 	}
-	//update the properties of projectile
+
+
 	Update() {
+	/**
+		Parameters:
+		N/A
+
+		Returns:
+		N/A
+
+		Description 
+		Updates the angle of which the projectile is fired
+	**/	
+		//convert angle into radians
 		var radians = this.angle / Math.PI * 180;
+		//calculate the x and y
 		this.x -= Math.cos(radians) * this.speed;
 		this.y -= Math.sin(radians) * this.speed;
 	}
 
 	createProjectile() {
-		//draw full circle for projectile and fill with specified colour
-		// c.beginPath()
-		// c.arc(this.x, this.y, this.radius, 0, Math.PI*2, false)	
+		/**
+			Parameters:
+			N/A
+
+			Returns:
+			N/A
+
+			Description
+			draws the projectile on the screen
+		**/
 		c.fillStyle = "white";
 		c.fillRect(this.x, this.y, this.width, this.height);
 	}
-
-	
-	
-
 		
 }
 
-function CollisionDetection(x1, y1, x2, y2, r1, r2){
-	let radiusSum;
-	let xDifference;
-	let yDifference;
-	radiusSum = r1 + r2;
-	xDifference = x1 - x2;
-	yDifference = y1 - y2;
-	if (radiusSum > Math.sqrt((xDifference * yDifference) + (yDifference * yDifference))){
-		return true;
-	} else {
-		return false;
-	}	
-}
 
-//pythagoras theorem to calculate disatance between objects
 function getDistance(x1, y1, x2, y2) {
+/**
+	Parameters:
+	x1 - one x value (the player or projectile x value)
+	y1 - one y value (the player or projectile y value)
+	x2 - second x value (the player or projectile x value)
+	y2 - one y value (the player or projectile y value)
+
+	Returns 
+	the distance between the two objects.
+
+	Description 
+	Use the pythagorean theorem to calculate the distance between two points
+
+**/
 	let xDistance = x2-x1;
 	let yDistance = y2-y1;
 
@@ -202,7 +281,21 @@ function getDistance(x1, y1, x2, y2) {
 	return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2))
 }
 
+
 function Render(){
+/**
+	Parameters:
+	N/A
+
+	Returns
+	N/A
+
+	Description 
+	 - Controls the movements of player using the arrow keys
+	 - Creates and updates player and projectiles as they move on the screen
+	 - Handles collision detection
+**/
+	//moving the player using the arrow keys
 	player.moveForward = (keys[38]);
 	//left arrow
 	if (keys[37]){
@@ -213,18 +306,20 @@ function Render(){
 		player.Rotate(1);
 	}
 
+	//collision detection
 	for (let i = 0; i < projectiles.length; i++){
 		if (getDistance(player.x, player.y, projectiles[i].x, projectiles[i].y) < (25)){
+			//sends user back to the start page
 			window.location.href = 'StartPage.html';
 		}
 	}
 
-
-
+	//updates the player as it moves around the screen
 	c.clearRect(0,0, canvasWidth, canvasHeight);
 	player.Update();
 	player.createPlayer();
 
+	//updates the projectiles as they are fired
 	if (projectiles.length !== 0){
 		for (let i = 0; i < projectiles.length; i++){
 			projectiles[i].Update();
@@ -232,6 +327,7 @@ function Render(){
 		}
 	}
 
+	//this makes all movement on the screen smooth and seamless
 	requestAnimationFrame(Render);
 
 }
