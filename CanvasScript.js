@@ -65,8 +65,8 @@ class Player {
 		//colour of player
 		this.fillStyle = "#FFA500";
 
-		this.projectilePointX = this.canvasWidth / 2 + 15;
-		this.projectilePointY = this.canvasHeight / 2 + 15;
+		this.projectilePointX = this.canvasWidth / 2 + 30;
+		this.projectilePointY = this.canvasHeight / 2;
 
 		// this.height = 30;
 		// this.width = 20;
