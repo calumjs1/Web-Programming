@@ -1,18 +1,16 @@
-/* everything center aligned with the same style and font size */
+/* sets the style for the general background */
 body {
 	background-color: #474747;
 	color:  #FFA500;
 	font-family: "Arial";
 	font-weight: 200;
-	
 }
-
 #body{
 	text-align: center;
 	padding-top: 60px;
 	font-size: 40px;
 }
-
+/* all instructions styles individually as they are all in there own divs */
 .Instruction1{
 	text-align: center;
 	padding-top: 60px;
