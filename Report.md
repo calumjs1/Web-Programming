@@ -31,3 +31,9 @@ The game consists of several pages, each with their own purpose and all with the
 
 We made several changes during the course of development. One of the key alterations was to make the player sprite a triangle instead of our original plan of a circle. This meant that the asset was easier to control during gameplay and also meant that the shooting function was easier to implement as it now comes from the tip of the triangle rather than the middle of the circle. 
 
+
+Our final submission still includes some errors. The Start Page is not fully functionable, when you enter your name into the text box on the Start Page and select play game the link takes you to the following:
+
+Instead, to access the game you must open the canvas.html page which will allow you to control the character and move around and shoot a projectile. 
+
+
