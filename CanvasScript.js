@@ -7,7 +7,7 @@ canvasHeight = window.innerHeight;
 //player
 let player;
 
-//arrays to hold projectiles and keycodes
+//arrays  to hold projectiles and keycodes
 //by having an array to hold the keycodes it allows keys to function simultaneously
 let keys = [];
 let projectiles = [];
