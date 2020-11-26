@@ -33,7 +33,6 @@ body {
 	justify-content: center;
 }
 
-
 .word {
 	margin: auto;
   	width: 15%;
@@ -168,6 +167,7 @@ input {
 	outline: none;
 	width: 250px;
 }
+/* styles for the user name and password buttons */
 .login{
 	margin-top: 30px;
 
