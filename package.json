@@ -1,0 +1,23 @@
+{
+  "name": "paintball",
+  "version": "1.0.0",
+  "description": "Project Team Members: Jamie Evennett, Jude Gater, Conor McCabe, Amber Roe and Calum Stewart",
+  "main": "CanvasScript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calumjs1/Web-Programming-Team100.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/calumjs1/Web-Programming-Team100/issues"
+  },
+  "homepage": "https://github.com/calumjs1/Web-Programming-Team100#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^3.0.3"
+  }
+}
