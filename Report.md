@@ -10,7 +10,9 @@ Conor McCabe, H00320740. GitHub Name - cm339
  
 
 Link to repository - https://github.com/calumjs1/Web-Programming-Team100
+
 Link to the Game - 
+
 Link to trailer - 
 
 For this project Calum Stewart and Amber Roe were the front end developers dealing with all of the visuals with HTML and and some of the functionality of the game with JavaScript.
