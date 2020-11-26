@@ -3,9 +3,13 @@ Team 100 Report
 Group Members - 
 
 Calum Stewart, H00324819. GitHub Name - calumjs1
+
 Amber Roe, H00322618. GitHub Name - aroe233
+
 Jude Gater, H00324915. GitHub Name - judeg112
+
 Jamie Evennett, H00323794. GitHub Name - Jse1152
+
 Conor McCabe, H00320740. GitHub Name - cm339
  
 
