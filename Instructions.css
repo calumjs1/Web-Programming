@@ -46,6 +46,13 @@ body {
 	padding-left: 20px;
 	font-size: 18px;
 }
+/* aligns the text in the centre with appropriate spacing from the top and the other instrcutions */
+.Instruction6{
+	text-align: center;
+	padding-top: 60px;
+	padding-left: 20px;
+	font-size: 18px;
+}
 /* styles the button in the same way as every other button to keep consistency */
 #BackButton {
 	margin-top: 500px;
