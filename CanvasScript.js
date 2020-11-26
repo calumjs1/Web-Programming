@@ -306,31 +306,7 @@ function Render(){
 		player.Rotate(1);
 	}
 
-	//collision detection
-	for (let i = 0; i < projectiles.length; i++){
-		if (getDistance(player.x, player.y, projectiles[i].x, projectiles[i].y) < (25)){
-			//sends user back to the start page
-			window.location.href = 'StartPage.html';
-		}
-	}
 
-	//updates the player as it moves around the screen
-	c.clearRect(0,0, canvasWidth, canvasHeight);
-	player.Update();
-	player.createPlayer();
-
-	//updates the projectiles as they are fired
-	if (projectiles.length !== 0){
-		for (let i = 0; i < projectiles.length; i++){
-			projectiles[i].Update();
-			projectiles[i].createProjectile();
-		}
-	}
-
-	//this makes all movement on the screen smooth and seamless
-	requestAnimationFrame(Render);
-
-}
 
 
 
